@@ -318,17 +318,18 @@ Matrix::MatrixVector Matrix::operator+(const MatrixVector& matrix) {
     return addMatrix;
 }
 
-Matrix::Matrix Matrix::operator+(const Matrix& matrix) {
+Matrix Matrix::operator+(const Matrix& matrix) {
     MatrixVector matrixV = matrix.getMatrix();
     long r = matrixV.size();
     long c = matrixV[0].size();
     if((r != n) || (m != c)){ throw std::invalid_argument("no viable dimensions");}
 
-    MatrixVector addMatrix(n, vector<double>(m));
+    MatrixVector addVector(n, vector<double>(m));
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < m; ++j){
-                addMatrix[i][j] = matrix[i][j] + _matrix[i][j];
+                addVector[i][j] = matrixV[i][j] + _matrix[i][j];
         }
     }
+    Matrix addMatrix = addVector;
     return addMatrix;
 }

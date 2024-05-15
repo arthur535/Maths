@@ -19,6 +19,8 @@ public:
     void printMatrix() const;
     void printTransposed() const;
     bool isSquare() const;
+    bool isSymmetric() const;
+    bool isSkewSymmetric() const;
     double determinant() const;
 
     static MatrixVector getTranspose(const MatrixVector&);

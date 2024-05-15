@@ -333,3 +333,23 @@ Matrix Matrix::operator+(const Matrix& matrix) {
     Matrix addMatrix = addVector;
     return addMatrix;
 }
+
+bool Matrix::isSymmetric() const {
+    if(_isSquare == false) return false;
+    for(int i = 0; i < n; ++i) {
+        for(int j = 0; j < m; ++j) {
+            if(_matrix[i][j] != _transposed[i][j]) return false;
+        }
+    }
+    return true;
+}
+
+bool Matrix::isSkewSymmetric() const {
+    if(_isSquare == false) return false;
+    for(int i = 0; i < n; ++i) {
+        for(int j = 0; j < m; ++j) {
+            if(_matrix[i][j] != -_transposed[i][j]) return false;
+        }
+    }
+    return true;
+}

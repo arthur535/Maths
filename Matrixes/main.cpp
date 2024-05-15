@@ -7,13 +7,15 @@ int main(int argc, char* argv[]) {
     std::vector<std::vector<double>> secondV = {{5},{6},{7}};
     Matrix second = secondV;
     std::vector<std::vector<double>> matrix = {
-        {1, 5, 2},
-        {0, -1, 2},
-        {0, 0, 1}
+        {0, -5,-2},
+        {5, 0, -2},
+        {2, 2, 0}
     };
+    
     Artmatrix.setMatrix(matrix);
     Artmatrix.printMatrix();
     std::cout << "Is square: " << Artmatrix.isSquare() << std::endl;
+    std::cout << "Is Skew symmetric: " << Artmatrix.isSkewSymmetric() << std::endl;
     std::cout << std::endl;
     auto transposed = Artmatrix.getTranspose();
     for (const auto& row : transposed) {

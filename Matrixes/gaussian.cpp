@@ -62,33 +62,3 @@ vector<vector<double>> solve(vector<vector<double>>& matrix, int n) {
 
     return matrix;
 }
-
-int main() {
-    int n = 4;
-//    std::cout << "define size of the matrix of linear equations: ";
-//    std::cin >> n;
-//    vector<vector<double>> matrix(n, vector<double>(n + 1));
-//    for(int i = 0; i < n; ++i) {
-//        std::cout << "input " << i << " row: " << std::endl;
-//        for(int j = 0; j < n; ++j) {
-//            std::cin >> matrix[i][j];
-//        }
-//        std::cout << "input " << i <<  " row value : ";
-//        std::cin >> matrix[i][n];
-//    }
-    vector<vector<double>> matrix{
-        {3,2,-4,1,3},
-        {3,3,-3,1,15},
-        {6,-3,1,1,14},
-        {4,3,8,1,8}
-    };
-    solve(matrix, n);
-    for(int i = 0; i < n; ++i) {
-        std::cout << i << " row: ";
-        for(int j = 0; j < n; ++j) {
-            std::cout << matrix[i][j] << " ";
-        }
-        std::cout << "= " << matrix[i][n];
-        std::cout << std::endl;
-    }
-}
